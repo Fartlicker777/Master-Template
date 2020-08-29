@@ -11,7 +11,6 @@ public class Template : MonoBehaviour {
     public KMBombInfo Bomb;
     public KMAudio Audio;
 
-    //Logging
     static int moduleIdCounter = 1;
     int moduleId;
     private bool moduleSolved;
@@ -28,12 +27,10 @@ public class Template : MonoBehaviour {
 
     }
 
-    // Use this for initialization
     void Start () {
 
     }
 
-    // Update is called once per frame
     void Update () {
 
     }
@@ -43,6 +40,10 @@ public class Template : MonoBehaviour {
     #pragma warning restore 414
 
     IEnumerator ProcessTwitchCommand (string Command) {
+      yield return null;
+    }
+
+    IEnumerator TwitchHandleForcedSolve () {
       yield return null;
     }
 }
