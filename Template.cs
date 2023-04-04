@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using KModkit;
 using Rnd = UnityEngine.Random;
+using Math = ExMath;
 
 public class Template : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class Template : MonoBehaviour {
 
    void Awake () {
       ModuleId = ModuleIdCounter++;
+      GetComponent<KMBombModule>().OnActivate += Activate;
       /*
       foreach (KMSelectable object in keypad) {
           object.OnInteract += delegate () { keypadPress(object); return false; };
@@ -28,12 +30,28 @@ public class Template : MonoBehaviour {
 
    }
 
-   void Start () {
+   void OnDestroy () { //Shit you need to do when the bomb ends
 
    }
 
-   void Update () {
+   void Activate () { //Shit that should happen when the bomb arrives (factory)/Lights turn on
 
+   }
+
+   void Start () { //Shit
+
+   }
+
+   void Update () { //Shit that happens at any point after initialization
+
+   }
+
+   void Solve () {
+      GetComponent<KMBombModule>().HandlePass();
+   }
+
+   void Strike () {
+      GetComponent<KMBombModule>().HandleStrike();
    }
 
 #pragma warning disable 414
