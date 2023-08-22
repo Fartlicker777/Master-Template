@@ -5,7 +5,7 @@ public class VoltageMeterReader : MonoBehaviour {
 
    public KMBombInfo Bomb;
 
-   int VoltageMeterInt () {
+   int GetVoltageMeterInt () {
       if (Bomb.QueryWidgets("volt", "").Count() != 0) {
          double voltage = double.Parse(Bomb.QueryWidgets("volt", "")[0].Substring(12).Replace("\"}", ""));
          return (int) voltage;
@@ -15,7 +15,7 @@ public class VoltageMeterReader : MonoBehaviour {
       }
    }
 
-   int VoltageMeterDecimal () {
+   int GetVoltageMeterDecimal () {
       if (Bomb.QueryWidgets("volt", "").Count() != 0) {
          double voltage = double.Parse(Bomb.QueryWidgets("volt", "")[0].Substring(12).Replace("\"}", ""));
          return (int) (voltage * 10 % 10);
